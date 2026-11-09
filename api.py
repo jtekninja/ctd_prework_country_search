@@ -3,13 +3,16 @@ import requests
 
 
 COUNTRIES_URL = "https://countries.dev/countries"
-TIMEOUT = 10
+TIMEOUT = 20
 
 
-
-response = requests.get(COUNTRIES_URL, timeout=TIMEOUT)
-countries = response.json()
-
+try:
+    response = requests.get(COUNTRIES_URL, timeout=TIMEOUT)
+    response.raise_for_status()
+    countries = response.json()
+except requests.exceptions.RequestException as e:
+    print(f"There was an error fetching country data: {e}")
+    raise SystemExit(1)
 
 search_region = input("Enter a region name: ").strip().casefold()
 #search_name = input("Enter a country name: ").strip().casefold()
@@ -42,6 +45,7 @@ def search_population(country_name):
             return country["population"]
     return None
 
+#Testing the functions
 print(len(fetch_region_countries(search_region)))
 print(fetch_regions())
 print(search_population("India"))

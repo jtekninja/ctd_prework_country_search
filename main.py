@@ -4,29 +4,36 @@ from display import start, end, format_summary
 
 
 countries = fetch_countries()
+
+if not countries:
+    print("No country data was fetched. Exiting the program.\n")
+    raise SystemExit(1)
+
 regions = fetch_regions(countries)
 
-# Print start message and display regions
-start(regions)
-
-# Get user input for region selection and validate it
+# This will loop until the user chooses to quit by entering 'q'.
 while True:
+    # Print start message and display regions
+    start(regions)
+
+    # Get user input for region selection and validate it
+    choice = input(f"\nEnter your choice (1-{len(regions)}) or 'q' to quit: ").strip().casefold()
+    
+    if choice == "q":
+            break
+      
     try:
-        choice = input(f"\nEnter your choice (1-{len(regions)}) or 'q' to quit: ").strip().casefold()
-        if choice == "q":
-            break
-        elif int(choice) >= 1 and int(choice) <= len(regions):
-            break
-        else:
-            print("\nInvalid choice. Please enter a number between 1 and 8, or 'q' to quit.")
+        region_number = int(choice)
+    
     except ValueError:
-        print("\nInvalid input. Please enter a whole number between 1 and 8, or 'q' to quit.")
+        print("Invalid input. Enter a whole number or 'q' to quit.")
+        continue
 
+    if region_number < 1 or region_number > len(regions):
+        print(f"Invalid choice. Enter a number from 1 to {len(regions)}.")
+        continue
 
-# If choice is not quit, check if any countries were found in the selected region and print the summary or a message if none were found
-if choice != "q":
-
-    region = regions[int(choice) - 1]
+    region = regions[region_number - 1]
     matching_countries = fetch_region_countries(countries, region)
 
     if matching_countries:

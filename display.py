@@ -25,10 +25,11 @@ def format_summary(countries, region):
         summary_lines.append(f"{name:<60} {population}")
 
    
-    print(f"\nSummary of countries and populations within {region}: \n")
+    print(f"\n\nSummary of countries and populations within {region}: \n")
     print(f"{'Country Name':<60} {'Population'}")
     print("-" * 80)
 
     for line in summary_lines:
         print(line)
+    print("\nSummary complete.\n\n")
   

@@ -31,5 +31,5 @@ def format_summary(countries, region):
 
     for line in summary_lines:
         print(line)
-    print("\nSummary complete.\n\n")
+    print("\nSummary complete.\n")
   

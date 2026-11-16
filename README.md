@@ -1,6 +1,6 @@
 # Countries and Their Populations Finder by Region
 
-This app was created for Code the Dream Pre-Work. It lets the user select a region and view the countries and their populations within that region by Sanjai Syamaprasad.
+This simple command line app was created for Code the Dream Pre-Work. It lets the user select a region and view the countries and their populations within that region by Sanjai Syamaprasad.
 
 ## Requirements:
 

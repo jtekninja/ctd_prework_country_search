@@ -4,8 +4,8 @@ This app was created for Code the Dream Pre-Work. It lets the user select a regi
 
 ## Requirements:
 
-Python 3
-An internet connection to retrieve country data
+1. Python 3
+2. An internet connection to retrieve country data
 
 Installation and running the app:
 
@@ -15,7 +15,7 @@ Installation and running the app:
    python -m pip install -r requirements.txt
    ```
 3. Start the app by the following command:
-    ```bash
+   ```bash
    python main.py
    ```
 

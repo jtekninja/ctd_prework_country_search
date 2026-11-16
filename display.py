@@ -1,6 +1,6 @@
 Start = "This app will show you the country names and their populations by selected region! "
 Search_Region = "Please select 1-8 for your region of choice: "
-End = "Thank you for using the Region Search App! "
+End = "Thank you for using the Region Countries and Population App! "
 
 def start(regions):
     # Prints a welcome message and displays the list of regions.

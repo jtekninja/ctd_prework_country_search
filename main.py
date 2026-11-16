@@ -22,9 +22,17 @@ while True:
     except ValueError:
         print("\nInvalid input. Please enter a whole number between 1 and 8, or 'q' to quit.")
 
+
+# If choice is not quit, check if any countries were found in the selected region and print the summary or a message if none were found
 if choice != "q":
-    # Print summary of countries and populations within the selected region
-    format_summary(fetch_region_countries(countries, regions[int(choice)-1]), regions[int(choice)-1]) 
+
+    region = regions[int(choice) - 1]
+    matching_countries = fetch_region_countries(countries, region)
+
+    if matching_countries:
+        format_summary(matching_countries, region)
+    else:
+        print(f"No countries were found in {region}.")
 
 # Print end message
 end()

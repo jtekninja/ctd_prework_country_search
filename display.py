@@ -3,6 +3,7 @@ Search_Region = "Please select 1-8 for your region of choice: "
 End = "Thank you for using the Region Search App! "
 
 def start(regions):
+    # Prints a welcome message and displays the list of regions.
     print(f"\n{Start}\n")
     print(f"{Search_Region}\n")
 
@@ -10,12 +11,13 @@ def start(regions):
         print(f"{i+1}. {regions[i]}")
 
 def end():
+    # Prints an end message.
     print(f"\n{End}\n")
 
 
 
 def format_summary(countries, region):
-    # Format and return a summary of countries and their populations.
+    # Prints a formatted summary of countries and their populations.
     summary_lines = []
     for country in countries:
         name = country.get("name", "Unknown")

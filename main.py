@@ -6,9 +6,10 @@ from display import start, end, format_summary
 countries = fetch_countries()
 regions = fetch_regions(countries)
 
+# Print start message and display regions
 start(regions)
 
-
+# Get user input for region selection and validate it
 while True:
     try:
         choice = input(f"\nEnter your choice (1-{len(regions)}) or 'q' to quit: ").strip().casefold()
@@ -23,9 +24,5 @@ while True:
 
 format_summary(fetch_region_countries(countries, regions[int(choice)-1]), regions[int(choice)-1]) 
 
+# Print end message
 end()
-
-#print(f"Your choice is {choice}")
-#print(len(fetch_region_countries(countries,region)))
-#print(fetch_regions(countries))
-#print(fetch_country_population(countries,"India"))

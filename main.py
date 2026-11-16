@@ -22,7 +22,9 @@ while True:
     except ValueError:
         print("\nInvalid input. Please enter a whole number between 1 and 8, or 'q' to quit.")
 
-format_summary(fetch_region_countries(countries, regions[int(choice)-1]), regions[int(choice)-1]) 
+if choice != "q":
+    # Print summary of countries and populations within the selected region
+    format_summary(fetch_region_countries(countries, regions[int(choice)-1]), regions[int(choice)-1]) 
 
 # Print end message
 end()
